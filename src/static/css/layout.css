@@ -1,0 +1,47 @@
+
+.layout {
+  display: grid;
+  grid-template-rows: 55px auto 70px;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  grid-row: 1 / 2;
+  background: var(--color-brand);
+}
+
+.main {
+  grid-row: 2 / 3;
+}
+
+.footer {
+  grid-row: 3 / 4;
+  background-color: var(--color-default);
+}
+
+.logo {
+  width: 100px;
+}
+
+.photo {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .extra {
+    display: none;
+  }
+}
+
+dt {
+  float: left;
+  clear: left;
+  width: 300px;
+  padding: var(--size-1);
+}
+
+dd {
+  padding: var(--size-1);
+  font-weight: bold;
+}
