@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Details = ({
+export const House = ({
   house: {
     address,
     postCode,
@@ -10,7 +10,7 @@ export const Details = ({
     features,
   },
 }) => (
-  <div className="container grid p-3">
+    <div className="container grid p-3">
       <div className="col-12">
         <h1>{address}</h1>
         <p>{postCode}</p>

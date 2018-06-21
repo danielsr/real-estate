@@ -6,6 +6,6 @@
   "ext": "js,jsx",
   "ignore": [
     "src/static/js/bundle.js",
-    "src/server-es5.js"
+    "src/server/server-es5.js"
   ]
 }

@@ -3,7 +3,7 @@ import nodeExternals from 'webpack-node-externals'
 
 const client = {
   entry: {
-    js: './src/client.js',
+    js: './src/client/index.js',
   },
   output: {
     path: path.join(__dirname, 'src', 'static', 'js'),
@@ -35,10 +35,10 @@ const server = {
     modulesFromFile: true,
   })],
   entry: {
-    js: './src/server.js',
+    js: './src/server/index.js',
   },
   output: {
-    path: path.join(__dirname, 'src'),
+    path: path.join(__dirname, 'src', 'server'),
     filename: 'server-es5.js',
     libraryTarget: 'commonjs2',
   },

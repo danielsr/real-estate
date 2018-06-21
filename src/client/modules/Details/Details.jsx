@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Details } from './Details'
-import { List } from './List'
-import { Spinner } from './Spinner'
+import { House } from './House'
+import { List } from '../List/List'
+import { Spinner } from '../Main/Spinner'
 
-export class House extends Component {
+export class Details extends Component {
 
   constructor(props) {
     super(props)
@@ -29,7 +29,7 @@ export class House extends Component {
 
     return (
       <div className="main">
-        {house && <Details house={house} />}
+        {house && <House house={house} />}
         {list && <List list={list} />}
         {!house && !list && <Spinner />}
       </div>
