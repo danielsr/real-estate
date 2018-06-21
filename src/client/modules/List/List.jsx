@@ -1,12 +1,26 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react'
+import axios from 'axios'
+import { Houses } from './Houses'
+import { Spinner } from '../Main/Spinner'
 
-export const List = ({ list }) => (
-  <div className="container grid p-3">
-    {list.map((house, index) => (
-      <Link to={`/${house.id}`} key={`house_${index}`} className="col-4 pl-2 pb-2">
-        <img alt="" className="photo" src={house.photo} />
-      </Link>
-    ))}
-  </div>
-)
+export class List extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      list: null,
+    }
+  }
+
+  async componentDidMount() {
+    const resultList = await axios.get('http://localhost:3000/api-list')
+    this.setState({ list: resultList.data })
+  }
+
+  render() {
+    const { list } = this.state
+
+    return list ? <Houses list={list} /> : <Spinner />
+  }
+}

@@ -21,8 +21,16 @@ app.get('/api-details', getDetails)
 app.get('/api-list', getList)
 
 app.get('*', (req, res) => {
-  const status = 200
+  let status = 200
   const context = {}
+
+  if (context.url) {
+    return res.redirect(302, context.url)
+  }
+
+  if (context.is404) {
+    status = 404
+  }
 
   const markup = renderToString(
     <Router location={req.url} context={context}>
