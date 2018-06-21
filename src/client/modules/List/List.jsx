@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import { Houses } from './Houses'
 import { Spinner } from '../Main/Spinner'
+import { getList } from './ListHelper'
 
 export class List extends Component {
 
@@ -14,7 +14,7 @@ export class List extends Component {
   }
 
   async componentDidMount() {
-    const resultList = await axios.get('http://localhost:3000/api-list')
+    const resultList = await getList()
     this.setState({ list: resultList.data })
   }
 

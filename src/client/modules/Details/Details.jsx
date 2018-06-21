@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import { House } from './House'
 import { Spinner } from '../Main/Spinner'
+import { getDetails } from './DetailsHelper'
 
 export class Details extends Component {
 
@@ -15,7 +15,7 @@ export class Details extends Component {
 
   async componentDidMount() {
     const { id } = this.props.match.params
-    const resultDetails = await axios.get(`http://localhost:3000/api-details?id=${id}`)
+    const resultDetails = await getDetails(id)
     this.setState({ house: resultDetails.data })
   }
 
