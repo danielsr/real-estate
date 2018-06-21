@@ -25,6 +25,8 @@
       "error",
       "never"
     ],
-    "react/prefer-stateless-function": "off"
+    "react/prefer-stateless-function": "off",
+    "react/no-array-index-key": "off",
+    "react/no-did-mount-set-state": "off"
   }
 }
