@@ -4,6 +4,7 @@ const KEY = 'ac1b0b1572524640a0ecc54de453ea9f'
 const LIST_URL = `http://partnerapi.funda.nl/feeds/Aanbod.svc/${KEY}/?type=koop&zo=/amsterdam`
 const DETAILS_URL = `http://partnerapi.funda.nl/feeds/Aanbod.svc/json/detail/${KEY}/koop`
 
+// Receives the original details payload and return a focused one
 function mapHouse(data) {
   return {
     address: data.Adres,
@@ -18,6 +19,7 @@ function mapHouse(data) {
   }
 }
 
+// Receives the original search payload and return a focused one
 function mapList(data) {
   return data.Objects.map(house => ({
     id: house.Id,
