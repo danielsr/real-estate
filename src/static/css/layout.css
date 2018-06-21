@@ -33,15 +33,3 @@
     display: none;
   }
 }
-
-dt {
-  float: left;
-  clear: left;
-  width: 200px;
-  padding: var(--size-1);
-}
-
-dd {
-  padding: var(--size-1);
-  font-weight: bold;
-}

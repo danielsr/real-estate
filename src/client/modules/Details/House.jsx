@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const House = ({
   house: {
@@ -11,6 +12,9 @@ export const House = ({
   },
 }) => (
   <div className="container grid p-3">
+    <div className="col-12">
+      <Link to="/">Search</Link>
+    </div>
     <div className="col-12">
       <h1>{address}</h1>
       <p>{postCode}</p>
