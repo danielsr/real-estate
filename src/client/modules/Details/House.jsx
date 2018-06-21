@@ -1,39 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Photos } from './Photos'
 
-export const House = ({
-  house: {
-    address,
-    postCode,
-    description,
-    price,
-    photos,
-    features,
-  },
-}) => (
+export const House = ({ house: { address, postCode, description, price, photos, features } }) => (
   <div className="container grid p-3">
-    <div className="col-12">
-      <Link to="/">Search</Link>
-    </div>
     <div className="col-12">
       <h1>{address}</h1>
       <p>{postCode}</p>
       <p>
-        <b>{`${price.amount} ${price.compl}`}</b>
+        <b>{`€ ${price.amount.toLocaleString('nl-NL')} ${price.compl}`}</b>
       </p>
     </div>
-    <div className="col-8">
-      <img alt="" className="photo" src={photos[0].large} />
-    </div>
-    <div className="col-4 extra">
-      <div className="grid">
-        {photos.map((photo, index) => (
-          <div key={`photo_${index}`} className="col-6 pl-2 pb-2">
-            <img alt="" className="photo" src={photo.thumb} />
-          </div>
-          ))}
-      </div>
-    </div>
+    <Photos photos={photos} />
     <div className="col-8">
       <h3>Features</h3>
       <dl>
@@ -42,7 +19,7 @@ export const House = ({
             <dt>{feature.title}</dt>
             <dd>{feature.info}</dd>
           </div>
-          ))}
+        ))}
       </dl>
     </div>
     <div className="col-8 text">
@@ -50,4 +27,4 @@ export const House = ({
       {description}
     </div>
   </div>
-  )
+)

@@ -28,6 +28,10 @@
   width: 100%;
 }
 
+.link {
+  cursor: pointer;
+}
+
 @media (max-width: 800px) {
   .extra {
     display: none;

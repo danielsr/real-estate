@@ -11,7 +11,8 @@ function mapHouse(data) {
     description: data.VolledigeOmschrijving,
     price: { amount: data.Prijs.Koopprijs, compl: data.Prijs.KoopAbbreviation },
     photos: data.Media
-      .filter(media => media.Categorie === 1 && media.IndexNumber <= 8)
+      .filter(media => media.Categorie === 1)
+      .filter((media, index) => index < 8)
       .map(media => ({ thumb: media.MediaItems[1].Url, large: media.MediaItems[3].Url })),
     features: data.KenmerkenKort.Kenmerken.map(item => ({ title: item.Naam, info: item.Waarde })),
   }
